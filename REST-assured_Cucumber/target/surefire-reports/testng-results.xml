@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="10818" started-at="2020-09-05T21:51:23Z" finished-at="2020-09-05T21:51:34Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:runners.TestRunner@2096442d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Surefire test" duration-ms="10818" started-at="2020-09-05T21:51:23Z" finished-at="2020-09-05T21:51:34Z">
+      <class name="runners.TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.TestRunner@2096442d]" name="setUpClass" is-config="true" duration-ms="152" started-at="2020-09-05T21:51:23Z" finished-at="2020-09-05T21:51:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="before()[pri:0, instance:runners.TestRunner@2096442d]" name="before" is-config="true" duration-ms="0" started-at="2020-09-05T21:51:23Z" finished-at="2020-09-05T21:51:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:runners.TestRunner@2096442d]" name="runScenario" duration-ms="10447" started-at="2020-09-05T21:51:23Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-09-05T21:51:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify weather information for a happy holidaymaker"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify weather information"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.TestRunner@2096442d]" name="tearDownClass" is-config="true" duration-ms="125" started-at="2020-09-05T21:51:34Z" finished-at="2020-09-05T21:51:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method status="PASS" signature="after()[pri:0, instance:runners.TestRunner@2096442d]" name="after" is-config="true" duration-ms="0" started-at="2020-09-05T21:51:34Z" finished-at="2020-09-05T21:51:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after -->
+      </class> <!-- runners.TestRunner -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

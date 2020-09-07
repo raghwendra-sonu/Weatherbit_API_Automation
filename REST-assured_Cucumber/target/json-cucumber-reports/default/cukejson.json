@@ -1,0 +1,130 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-09-05T21:51:24.070Z",
+        "line": 13,
+        "name": "Verify weather information for a happy holidaymaker",
+        "description": "",
+        "id": "verify-weather-information;verify-weather-information-for-a-happy-holidaymaker;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3134676400,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I like to holiday in Bondi, AU",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Bondi, AU",
+                  "offset": 21
+                }
+              ],
+              "location": "UserStepDefinitions.verify_holiday_city(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 106600,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I only like to holiday on Thursday",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Thursday",
+                  "offset": 26
+                }
+              ],
+              "location": "UserStepDefinitions.verify_holiday_days(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1266530600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I look up for the weather forecast for the next 14 days",
+            "match": {
+              "arguments": [
+                {
+                  "val": "14",
+                  "offset": 48
+                }
+              ],
+              "location": "UserStepDefinitions.verify_weather_forecast(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2897382500,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Check If it has rained previous days",
+            "match": {
+              "location": "UserStepDefinitions.verify_rain_in_past_Days()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1271422500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I can see the temperature is between 10.0 to 30.0 degrees in Bondi Beach",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10.0",
+                  "offset": 37
+                },
+                {
+                  "val": "30.0",
+                  "offset": 45
+                }
+              ],
+              "location": "UserStepDefinitions.verify_temperature_range(float,float)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1724509400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I can see that it wont be snowing for the next 14 days",
+            "match": {
+              "arguments": [
+                {
+                  "val": "14",
+                  "offset": 47
+                }
+              ],
+              "location": "UserStepDefinitions.verify_snow_depth(int)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Verify weather information",
+    "description": "",
+    "id": "verify-weather-information",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Verify_Weather_Information.feature",
+    "tags": []
+  }
+]
