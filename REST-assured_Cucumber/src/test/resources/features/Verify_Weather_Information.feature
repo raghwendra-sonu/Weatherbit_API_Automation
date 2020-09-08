@@ -2,7 +2,7 @@ Feature: Verify weather information
 
 	Scenario Outline: Verify weather information for a happy holidaymaker
 	Given I like to holiday in <City>
-	And I only like to holiday on <Day>
+	And I only like to holiday on <Day> in <City>
 	When I look up for the weather forecast for the next <Number_Of_Days> days
 	And Check If it has rained previous days
 	Then I can see the temperature is between <Temp_From> to <Temp_To> degrees in Bondi Beach

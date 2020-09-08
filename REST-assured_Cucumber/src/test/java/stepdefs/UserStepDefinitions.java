@@ -1,7 +1,13 @@
 package stepdefs;
 
 import static io.restassured.RestAssured.given;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
 import org.testng.Assert;
 
 import io.cucumber.java.en.And;
@@ -31,9 +37,28 @@ public class UserStepDefinitions {
 		Assert.assertTrue(response.getBody().asString().contains(City.split(", ")[0]));
 	}
 
-	@And("I only like to holiday on (.*)")
-	public void verify_holiday_days(String Day) {
-		// No API definition available to pass a particular Day name e.g. Thursday in parameter.
+	@And("I only like to holiday on (.*) in (.*)")
+	public void verify_holiday_days(String Day, String City) throws ParseException {
+		String datetime;
+		request = given();
+		request.header("Content-Type", "application/json");
+		response = request.when().get("" + BaseURL + "/v2.0/forecast/daily?city=" + City + "&key=" + APIKey + "");
+		System.out.println("response: " + response.prettyPrint());
+		Assert.assertTrue(response.contentType().contains("application/json"));
+		ArrayList<String> AllDates = JsonPath.from(response.asString()).get("data.datetime");
+		for (int i = 0; i < AllDates.size(); i++) {
+			datetime = JsonPath.from(response.asString()).get("data.datetime[" + i + "]");
+			System.out.println(datetime);
+			SimpleDateFormat format1=new SimpleDateFormat("yyyy-MM-dd");
+			Date dt1=format1.parse(datetime);
+			DateFormat format2=new SimpleDateFormat("EEEE"); 
+			String finalDay=format2.format(dt1);
+			if (finalDay.contains(Day)) {
+				System.out.println(datetime +" is most latest " +Day +", i will like to holiday on");
+				break;
+			}
+		}
+		
 	}
 
 	@When("I look up for the weather forecast for the next {int} days")
@@ -81,7 +106,7 @@ public class UserStepDefinitions {
 		System.out.println("response: " + response.prettyPrint());
 		Assert.assertTrue(response.contentType().contains("application/json"));
 		ArrayList<Float> temp_arr = JsonPath.from(response.asString()).get("data.temp");
-		float temp = temp_arr.get(0);
+		float temp = Float.parseFloat(temp_arr.get(0)+"");
 		Assert.assertTrue(temp >= temp_from && temp <= temp_to);
 	}
 
